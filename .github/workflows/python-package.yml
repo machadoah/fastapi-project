@@ -20,17 +20,17 @@ jobs:
 
     steps:
     - uses: actions/checkout@v4
-    - name: Set up Python ${{ matrix.python-version }}
+    - name: 🐍 Set up Python ${{ matrix.python-version }}
       uses: actions/setup-python@v3
       with:
         python-version: ${{ matrix.python-version }}
-    - name: Install dependencies
+    - name: ⬇️ Install dependencies
       run: |
         python -m pip install uv
         uv sync
-    - name: Lint with Ruff
+    - name: ⚡️ Lint with Ruff
       run: |
         uv run task format
-    - name: Test with pytest
+    - name: 🧪 Test with pytest
       run: |
         uv run task test
